@@ -1,6 +1,6 @@
 # news-network-frontend
 
-This template should help get you started developing with Vue 3 in Vite.
+东百淋带新闻网发布系统前端，使用Vite+Vue3.2构建。
 
 ## Recommended IDE Setup
 
