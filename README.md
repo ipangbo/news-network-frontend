@@ -2,6 +2,11 @@
 
 东百淋带新闻网发布系统前端，使用Vite+Vue3.2构建。
 
+## 构建提示
+
+查看npm源：`npm config get registry`
+设置npm源：`npm config set registry https://registry.npmmirror.com`
+
 ## Recommended IDE Setup
 
 [VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
