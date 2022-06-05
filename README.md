@@ -5,6 +5,7 @@
 ## 构建提示
 
 查看npm源：`npm config get registry`
+
 设置npm源：`npm config set registry https://registry.npmmirror.com`
 
 ## Recommended IDE Setup
