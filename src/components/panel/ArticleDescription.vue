@@ -93,13 +93,18 @@
       <div class="operation-box">
         <el-button plain>在前台查看</el-button>
         <el-button plain>修改文章</el-button>
-        <el-button type="danger" plain @click="openDeleteConfirm">删除文章</el-button>
+        <el-button type="danger" plain @click="openDeleteConfirm"
+          >删除文章</el-button
+        >
       </div>
     </el-descriptions-item>
   </el-descriptions>
 </template>
 
 <script setup lang="ts">
+const emit = defineEmits<{
+  (e: "deleted"): void;
+}>();
 import {
   Hide,
   User,
@@ -112,6 +117,7 @@ import {
   SetUp,
 } from "@element-plus/icons-vue";
 import { ElMessage, ElMessageBox } from "element-plus";
+import ArticleHttp from "@/axios/ArticleHttp";
 
 const props = defineProps<{
   articleId: number;
@@ -124,10 +130,22 @@ const props = defineProps<{
   articleModifyTime: string;
 }>();
 
+const deleteArticlePromise = () =>
+  ArticleHttp({
+    url: "deleteArticle",
+    method: "post",
+    data: {
+      articleId: props.articleId,
+    },
+  });
 // 删除确认
 const openDeleteConfirm = () => {
   ElMessageBox.confirm(
-    "确实要删除标题为【" + props.articleTitle + "】的文章吗？",
+    "确实要删除标题为【" +
+      props.articleTitle +
+      "】，id为【" +
+      props.articleId +
+      "】的文章吗？",
     "Warning",
     {
       confirmButtonText: "必须删",
@@ -136,11 +154,30 @@ const openDeleteConfirm = () => {
     }
   )
     .then(() => {
-      ElMessage({
-        type: "success",
-        message: "已删除",
-        duration: 1000,
-      });
+      deleteArticlePromise()
+        .then((data) => {
+          if (data.status === 200) {
+            ElMessage({
+              type: "success",
+              message: "已删除",
+              duration: 1000,
+            });
+            emit("deleted");
+          } else {
+            ElMessage({
+              type: "error",
+              message: "服务端错误，响应码不是200",
+              duration: 1000,
+            });
+          }
+        })
+        .catch(() => {
+          ElMessage({
+            type: "error",
+            message: "服务端错误，未收到服务器回应",
+            duration: 1000,
+          });
+        });
     })
     .catch(() => {
       ElMessage({

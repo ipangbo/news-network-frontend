@@ -17,6 +17,7 @@
         :article-draft="item.articleDraft"
         :article-create-time="item.articleCreateTime.replace('T', ' ')"
         :article-modify-time="item.articleModifyTime.replace('T', ' ')"
+        @deleted="refresh"
       ></ArticleDescription>
     </div>
   </div>
@@ -32,7 +33,7 @@
 import ArticleDescription from "@/components/panel/ArticleDescription.vue";
 import { ref, watchEffect } from "vue";
 import ArticleHttp from "@/axios/ArticleHttp";
-import { ElMessage, ElMessageBox } from "element-plus";
+import { ElMessage } from "element-plus";
 import type { getAllVO } from "@/datasource/Types";
 
 const articleList = ref<getAllVO[]>([]);
@@ -106,5 +107,8 @@ watchEffect(() => {
 
 .news-item-box {
   margin-bottom: 20px;
+}
+.el-pagination {
+  justify-content: right;
 }
 </style>
