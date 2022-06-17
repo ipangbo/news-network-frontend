@@ -146,7 +146,7 @@ const openDeleteConfirm = () => {
       "】，id为【" +
       props.articleId +
       "】的文章吗？",
-    "Warning",
+    "删除确认",
     {
       confirmButtonText: "必须删",
       cancelButtonText: "先不删了",

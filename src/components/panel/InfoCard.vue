@@ -3,7 +3,7 @@
     <template #header>
       <div class="card-header">
         <span class="card-name">{{ props.cardName }}</span>
-        <el-button class="button" type="text" @click="handleJump"
+        <el-button class="button" type="primary" link @click="handleJump"
           >详情</el-button
         >
       </div>
