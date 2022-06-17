@@ -30,6 +30,11 @@ const router = createRouter({
           component: () => import("@/components/panel/ManageArticle.vue"),
           meta: { title: "文章管理" },
         },
+        {
+          path: "editor",
+          name: "Editor",
+          component: () => import("@/components/panel/EditorComp.vue"),
+        },
       ],
     },
   ],

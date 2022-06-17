@@ -4,7 +4,7 @@
       <el-header class="header">
         <HeaderComp></HeaderComp>
       </el-header>
-      <el-container class="full-height">
+      <el-container class="complemented-height">
         <el-aside width="230px">
           <MenuBar></MenuBar>
         </el-aside>
@@ -28,6 +28,9 @@ import { RouterView } from "vue-router";
 
 <style scoped>
 .full-height {
+  height: 100vh;
+}
+.complemented-height {
   height: 92vh;
 }
 .header {

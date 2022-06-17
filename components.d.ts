@@ -6,6 +6,7 @@ import '@vue/runtime-core'
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     ArticleDescription: typeof import('./src/components/panel/ArticleDescription.vue')['default']
+    EditorComp: typeof import('./src/components/panel/EditorComp.vue')['default']
     ElAside: typeof import('element-plus/es')['ElAside']
     ElButton: typeof import('element-plus/es')['ElButton']
     ElCard: typeof import('element-plus/es')['ElCard']
@@ -14,7 +15,7 @@ declare module '@vue/runtime-core' {
     ElDescriptionsItem: typeof import('element-plus/es')['ElDescriptionsItem']
     ElHeader: typeof import('element-plus/es')['ElHeader']
     ElIcon: typeof import('element-plus/es')['ElIcon']
-    ElInput: typeof import('element-plus/es')['ElInput']
+    ElInput: typeof import("element-plus/es")["ElInput"];
     ElMain: typeof import('element-plus/es')['ElMain']
     ElMenu: typeof import('element-plus/es')['ElMenu']
     ElMenuItem: typeof import('element-plus/es')['ElMenuItem']
@@ -22,7 +23,7 @@ declare module '@vue/runtime-core' {
     ElPagination: typeof import('element-plus/es')['ElPagination']
     ElTag: typeof import('element-plus/es')['ElTag']
     HeaderComp: typeof import('./src/components/panel/HeaderComp.vue')['default']
-    HelloWorld: typeof import('./src/components/HelloWorld.vue')['default']
+    HelloWorld: typeof import("./src/components/HelloWorld.vue")["default"];
     IconCommunity: typeof import('./src/components/icons/IconCommunity.vue')['default']
     IconDocumentation: typeof import('./src/components/icons/IconDocumentation.vue')['default']
     IconEcosystem: typeof import('./src/components/icons/IconEcosystem.vue')['default']
@@ -35,8 +36,8 @@ declare module '@vue/runtime-core' {
     MenuBar: typeof import('./src/components/panel/MenuBar.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
-    TheWelcome: typeof import('./src/components/TheWelcome.vue')['default']
-    WelcomeItem: typeof import('./src/components/WelcomeItem.vue')['default']
+    TheWelcome: typeof import("./src/components/TheWelcome.vue")["default"];
+    WelcomeItem: typeof import("./src/components/WelcomeItem.vue")["default"];
   }
 }
 
