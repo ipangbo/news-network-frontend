@@ -105,6 +105,7 @@
 const emit = defineEmits<{
   (e: "deleted"): void;
 }>();
+
 import {
   Hide,
   User,

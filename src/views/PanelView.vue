@@ -9,9 +9,9 @@
           <MenuBar></MenuBar>
         </el-aside>
         <el-main>
-          <router-view v-slot="{ Component }">
-            <keep-alive>
-              <component :is="Component" />
+          <router-view v-slot="{ Component, route }">
+            <keep-alive :key="route.path">
+              <component :is="Component" :key="route.path" />
             </keep-alive>
           </router-view>
         </el-main>
@@ -23,7 +23,9 @@
 <script setup lang="ts">
 import MenuBar from "@/components/panel/MenuBar.vue";
 import HeaderComp from "@/components/panel/HeaderComp.vue";
-import { RouterView } from "vue-router";
+import { RouterView, useRoute } from "vue-router";
+const route = useRoute();
+
 </script>
 
 <style scoped>

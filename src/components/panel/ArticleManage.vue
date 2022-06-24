@@ -34,9 +34,9 @@ import ArticleDescription from "@/components/panel/ArticleDescription.vue";
 import { ref, watchEffect } from "vue";
 import ArticleHttp from "@/axios/ArticleHttp";
 import { ElMessage } from "element-plus";
-import type { getAllVO } from "@/datasource/Types";
+import type { GetAllVO } from "@/datasource/Types";
 
-const articleList = ref<getAllVO[]>([]);
+const articleList = ref<GetAllVO[]>([]);
 const currentPage = ref(1);
 const getAllArticlePromise = () =>
   ArticleHttp({

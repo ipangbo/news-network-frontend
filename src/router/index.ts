@@ -5,6 +5,7 @@ const router = createRouter({
   routes: [
     {
       path: "/",
+      name: "base",
       redirect: "/panel",
     },
     {
@@ -27,15 +28,22 @@ const router = createRouter({
         {
           path: "manage",
           name: "PanelManage",
-          component: () => import("@/components/panel/ManageArticle.vue"),
+          component: () => import("@/components/panel/ArticleManage.vue"),
           meta: { title: "文章管理" },
         },
         {
-          path: "editor",
-          name: "Editor",
-          component: () => import("@/components/panel/EditorComp.vue"),
+          path: "category",
+          name: "CategoryManage",
+          component: () => import("@/components/panel/CategoryManage.vue"),
+          meta: { title: "类别管理" },
         },
       ],
+    },
+    {
+      path: "/editor",
+      name: "Editor",
+      component: () => import("@/views/EditorView.vue"),
+      meta: { title: "编辑文章" },
     },
   ],
 });

@@ -6,7 +6,9 @@ import '@vue/runtime-core'
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     ArticleDescription: typeof import('./src/components/panel/ArticleDescription.vue')['default']
-    EditorComp: typeof import('./src/components/panel/EditorComp.vue')['default']
+    ArticleManage: typeof import('./src/components/panel/ArticleManage.vue')['default']
+    CategoryManage: typeof import('./src/components/panel/CategoryManage.vue')['default']
+    EditorComp: typeof import('./src/views/EditorView.vue')['default']
     ElAside: typeof import('element-plus/es')['ElAside']
     ElButton: typeof import('element-plus/es')['ElButton']
     ElCard: typeof import('element-plus/es')['ElCard']
@@ -15,12 +17,15 @@ declare module '@vue/runtime-core' {
     ElDescriptionsItem: typeof import('element-plus/es')['ElDescriptionsItem']
     ElHeader: typeof import('element-plus/es')['ElHeader']
     ElIcon: typeof import('element-plus/es')['ElIcon']
-    ElInput: typeof import("element-plus/es")["ElInput"];
+    ElInput: typeof import('element-plus/es')['ElInput']
     ElMain: typeof import('element-plus/es')['ElMain']
     ElMenu: typeof import('element-plus/es')['ElMenu']
     ElMenuItem: typeof import('element-plus/es')['ElMenuItem']
+    ElOption: typeof import('element-plus/es')['ElOption']
     ElPageHeader: typeof import('element-plus/es')['ElPageHeader']
     ElPagination: typeof import('element-plus/es')['ElPagination']
+    ElSelect: typeof import('element-plus/es')['ElSelect']
+    ElSwitch: typeof import('element-plus/es')['ElSwitch']
     ElTag: typeof import('element-plus/es')['ElTag']
     HeaderComp: typeof import('./src/components/panel/HeaderComp.vue')['default']
     HelloWorld: typeof import("./src/components/HelloWorld.vue")["default"];
@@ -32,7 +37,7 @@ declare module '@vue/runtime-core' {
     IndexComp: typeof import('./src/components/panel/IndexComp.vue')['default']
     InfoCard: typeof import('./src/components/panel/InfoCard.vue')['default']
     LoginForm: typeof import('./src/components/login/LoginForm.vue')['default']
-    ManageArticle: typeof import('./src/components/panel/ManageArticle.vue')['default']
+    ManageArticle: typeof import('./src/components/panel/ArticleManage.vue')['default']
     MenuBar: typeof import('./src/components/panel/MenuBar.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']

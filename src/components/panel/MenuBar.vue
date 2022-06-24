@@ -13,12 +13,18 @@
         </el-icon>
         <span>文章管理</span>
       </el-menu-item>
+      <el-menu-item index="/panel/category">
+        <el-icon>
+          <Collection />
+        </el-icon>
+        <span>类别管理</span>
+      </el-menu-item>
     </el-menu>
   </div>
 </template>
 
 <script setup lang="ts">
-import { Document, Menu } from "@element-plus/icons-vue";
+import { Document, Menu, Collection } from "@element-plus/icons-vue";
 import { useRoute } from "vue-router";
 const route = useRoute();
 </script>
